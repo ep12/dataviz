@@ -1,5 +1,5 @@
 import re
-from urllib.parse import urlencode
+from urllib.parse import quote
 
 RAW, CONVERT = 1, 2
 
@@ -8,7 +8,7 @@ def latex2url(latex_src: str, inline: bool):
     url = 'https://latex.codecogs.com/svg.latex?'
     if inline:
         url += '\\inline%20' * inline
-    url += urlencode({latex_src: ''})[:-1]
+    url += quote(latex_src)
     return f'![{latex_src}]({url})'
 
 
