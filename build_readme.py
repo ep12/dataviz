@@ -28,5 +28,8 @@ if __name__ == '__main__':
                 g.write(raw[start:end])
                 continue
             # mode == CONVERT
-            latex = raw[start:end].strip('$').replace('\n', '')
+            part = raw[start:end]
+            latex = part.strip('$').replace('\n', '')
+            if part[1] != '$':
+                latex = '\\inline' + latex
             g.write(latex2url(latex))
