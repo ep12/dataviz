@@ -4,8 +4,10 @@ from urllib.parse import urlencode
 RAW, CONVERT = 1, 2
 
 
-def latex2url(latex_src: str):
+def latex2url(latex_src: str, inline: bool):
     url = 'https://latex.codecogs.com/svg.latex?'
+    if inline:
+        url += '\\inline%20' * inline
     url += urlencode({latex_src: ''})[:-1]
     return f'![{latex_src}]({url})'
 
@@ -30,6 +32,4 @@ if __name__ == '__main__':
             # mode == CONVERT
             part = raw[start:end]
             latex = part.strip('$').replace('\n', '')
-            if part[1] != '$':
-                latex = '\\inline ' + latex
-            g.write(latex2url(latex))
+            g.write(latex2url(latex, part[1] != '$'))
