@@ -1,7 +1,7 @@
 import setuptools
 
 try:
-    with open("README.rst", "r") as fh:
+    with open("README.md", "r") as fh:
         long_description = fh.read()
 except Exception as e:
     import sys
@@ -18,7 +18,7 @@ setuptools.setup(
     # author_email='',
     description='Visualise data the easy way',
     long_description=long_description,
-    long_description_content_type='text/x-rst',
+    long_description_content_type='text/markdown',
     url='https://github.com/ep12/dataviz',
     packages=setuptools.find_packages(where='src'),
     license='GNU AGPL v3',
