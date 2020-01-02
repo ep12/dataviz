@@ -31,5 +31,5 @@ if __name__ == '__main__':
             part = raw[start:end]
             latex = part.strip('$').replace('\n', '')
             if part[1] != '$':
-                latex = '\\inline' + latex
+                latex = '\\inline ' + latex
             g.write(latex2url(latex))
