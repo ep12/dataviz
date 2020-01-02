@@ -28,8 +28,5 @@ if __name__ == '__main__':
                 g.write(raw[start:end])
                 continue
             # mode == CONVERT
-            part = raw[start:end]
-            if part.startswith('$$'):
-                g.write('  \n')
-            latex = part.strip('$').replace('\n', '')
+            latex = raw[start:end].strip('$').replace('\n', '')
             g.write(latex2url(latex))
