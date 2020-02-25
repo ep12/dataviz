@@ -1,5 +1,6 @@
 **/_oldpp.*
 .scripts/
+.ignored/
 
 # Created by https://www.gitignore.io/api/vim,code,emacs,python
 # Edit at https://www.gitignore.io/?templates=vim,code,emacs,python
